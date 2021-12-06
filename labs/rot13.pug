@@ -1,0 +1,18 @@
+doctype html
+html
+    head
+        title ROT13
+        link(rel="stylesheet", href="/css/bootstrap.css", type="text/css")
+    body.bg-dark.text-light(onload="rot13()")
+        div.container
+            h1.text-center ROT13
+            .row
+                .col
+                    h3 Message
+                    textarea(name="input", cols="50", rows="10", id="in", oninput="update()")
+                .col
+                    div(id="out")
+                    script(src="/rot13.js")
+            footer
+                div.alert.alert-dark.fixed-bottom.text-center 
+                    a(href="/" class="alert-link") Return to lab list  

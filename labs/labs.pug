@@ -1,0 +1,25 @@
+mixin card(title, text, path)  
+  div.card.bg-dark
+    div.card-body
+      h3.card-title=title
+      p.card-text=text
+    div.card-footer
+      a(class="btn btn-success" href=path) XSS!
+- let name="XSS Laboratory"
+doctype html
+html
+  head
+    title=name
+    link(rel="stylesheet", href="css/bootstrap.css", type="text/css")
+  body.bg-dark.text-light
+    div.container
+      h1.text-center.text-success=name
+      div.card-group
+        +card("Nothing","Nothing","/nopage")
+        +card("FakeImgur","Likes to share","/fakeimgur")
+        +card("TooSimple","Simply shorten your link","/simple")
+      .card-group 
+        +card("ROT13", "As safe as ROT13", "/rot13")
+        +card("PersonalCard", 'I had fun making this', "/personalcard")
+        
+          

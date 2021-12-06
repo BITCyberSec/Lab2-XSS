@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title FakeImgur
+    link(rel="stylesheet", href="/css/bootstrap.css", type="text/css")
+    script(src="/fakeimgur.js") 
+  body.bg-dark.text-light
+    div.container
+      h1.text-center(onclick="window.location.href='/fakeimgur'") Fake
+        span.bg-warning.text-black imgur
+      div.container
+        if(src)
+          img(src!=src class="mx-auto d-block")
+        else
+          h3 Uploader
+          input(type="file" id="source" onchange="sourceToSink()")
+          p(class="text-danger" style="display:none" id="errmsg") File too big
+    footer
+        div.alert.alert-dark.fixed-bottom.text-center 
+          a(href="/" class="alert-link") Return to lab list 
+          

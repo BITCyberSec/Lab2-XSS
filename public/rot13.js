@@ -1,0 +1,2 @@
+const rot13 = () => document.getElementById('out').innerHTML = "<h3>ROT13ified</h3>" + decodeURIComponent(window.location.href.split('#')[1]).replace(/[a-z]/gi, letter => String.fromCharCode(letter.charCodeAt(0) + (letter.toLowerCase() <= 'm' ? 13 : -13))).replace("<","&lt;").replace(">","&gt;");
+const update = () => {window.location.href=window.location.href.split('#')[0]+("#"+document.getElementById("in").value);rot13();}

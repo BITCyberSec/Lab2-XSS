@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title Personal card
+    link(rel="stylesheet", href="css/bootstrap.css", type="text/css")
+    script(src="/deparam.js") 
+  body.bg-dark.text-light(onload="initSite()")
+    div.container
+      h1.text-center Personal Card
+      form(action="/personalcard", method="get", id="form")
+        .mb-3
+            label.form-label(for="name") Name 
+            input.form-control(type="text", name="name") 
+        .mb-3
+            label.form-label(for="profession") Profession 
+            input.form-control(type="text", name="profession")
+        .mb-3
+            button(type="submit" class="btn btn-primary") Generate card
+      div.card-group
+        div.card.bg-dark(id="card")
+          div.card-body
+            h3.card-title(id="name")
+            p.card-text(id="profession")
+          div.card-footer
+            span.card-text(id="watermark")
+    script(src="/fillcard.js")
+    footer
+        div.alert.alert-dark.fixed-bottom.text-center 
+            a(href="/" class="alert-link") Return to lab list   

@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title WORK IN PROGRESS
+  body
+    if(path)
+      h1 ERROR 404
+      p | Website 
+        span!=path 
+        |  does not exist!
+    else
+      h1 WEBSITE IN BULIDING 
+      p Come at another time
+    a(href="/") Return now
+    

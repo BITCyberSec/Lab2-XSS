@@ -1,0 +1,24 @@
+- let name="TooSimple"
+doctype html
+html
+  head
+    title=name
+    link(rel="stylesheet", href="/css/bootstrap.css", type="text/css")
+  body.bg-dark.text-light
+    div.container
+      h1.text-center.text-info=name
+      if(script)
+        script!=script
+      else if error
+        div.alert.alert-danger Invalid request parameter.
+      else if shortLink
+        div.alert.alert-success Link 
+          a(href!=shortLink class="alert-link")=shortLink
+          |   is now available
+      else
+        form(action="/simple", method="post")
+          input(type="text" name="url" class="form-control")
+          input(type="submit", value="Generate link", class="btn btn-primary")
+      footer
+        div.alert.alert-dark.fixed-bottom.text-center 
+          a(href="/" class="alert-link") Return to lab list
